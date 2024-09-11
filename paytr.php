@@ -15,19 +15,17 @@ $payment = Paytr::make([
     'no_installment' => 0, // taksit pasif = 0 aktif = 1
     'max_installment' => 0, // maksimum taksit sayı pasif = 0
     'user_name' => 'Münür Akdemir', // kullanıcı adı ve soyadı
-    'user_address' => 'Adres bilgisi', // Kullanıcı adresi
-    'user_phone' => '05543266754', // Kullanıcı telefon numarası
+    'user_address' => 'X', // adres
+    'user_phone' => '05543266754', // telefon numarası
     'merchant_ok_url' => $config['ok_url'],
     'merchant_fail_url' => $config['fail_url'],
-    'timeout_limit' => 30, // İşlem zaman aşımı süresi
-    'currency' => $config['currency'], // İşlem para birimi
+    'timeout_limit' => 30,
+    'currency' => $config['currency'],
 ]);
 
 if ($payment['status'] == 'success') {
-    // Ödeme başarılı, kullanıcının yönlendirileceği URL'yi alalım
     header('Location: https://www.paytr.com/odeme/guvenli/' . $payment['token']);
     exit;
 } else {
-    // Ödeme başarısız, hata sebebini gösterebilirsiniz
-    echo 'Hata: ' . $payment['reason'];
+    echo 'error;' . $payment['reason'];
 }
