@@ -1,2 +1,6 @@
 # paytr-integration
-Payment example using PAYTR API client using PHP.
+
+PHP kaynak kodlu sitelerde paytr entegrasyonu.
+
+
+yerel dizinde ```composer require mews/paytr``` komutunu kullanarak kütüphaneyi indirebilirsiniz.
